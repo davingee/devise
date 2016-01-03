@@ -22,9 +22,10 @@ module Devise
   #   # is the modules included in the class
   #
   class Mapping #:nodoc:
-    attr_accessor :singular, :scoped_path, :path, :controllers, :path_names,
+    attr_reader :singular, :scoped_path, :path, :controllers, :path_names,
                 :class_name, :sign_out_via, :format, :used_routes, :used_helpers,
                 :failure_app, :router_name
+    attr_accessor :class_name, :klass
 
     alias :name :singular
 
