@@ -27,7 +27,7 @@ module Devise
                 :failure_app, :router_name
 
     alias :name :singular
-
+    attr_accessor :class_name, :klass
     # Receives an object and find a scope for it. If a scope cannot be found,
     # raises an error. If a symbol is given, it's considered to be the scope.
     def self.find_scope!(obj)
