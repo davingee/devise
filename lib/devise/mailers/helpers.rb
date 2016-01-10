@@ -48,6 +48,7 @@ module Devise
       end
 
       def mailer_sender(mapping, sender = :from)
+        return devise_mapping.project.email_from unless devise_mapping.project.blank?
         default_sender = default_params[sender]
         if default_sender.present?
           default_sender.respond_to?(:to_proc) ? instance_eval(&default_sender) : default_sender
